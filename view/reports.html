@@ -1,0 +1,44 @@
+<div ng-controller="FarmShopController" class="container" ng-init="displayReport()">
+
+<button class="btn btn-default" ng-click="viewFOS()">Back</button>
+
+
+<h2>FarmShop Report <span class="glyphicon glyphicon-shopping-cart"></span></h2>    
+
+<form class="form-horizontal" method="post">
+<div class="col-sm-3"><input type="text" class="form-control" id="date" ng-model="date"></div>
+<button id="singlebutton" name="singlebutton" ng-click="getDate()" class="btn btn-default">Search</button>
+</form>
+<div class = "row">
+<!--<div class ="col-md-2"></div>-->
+<div  class = "col-md-12" class = style="width:500px;">  
+                        
+                        
+                             
+  <br /><br />  
+  <table class="table table-bordered table-striped"> 
+    <thread class="thread-dark"> 
+      <tr> 
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>  
+        <th scope="col">Price(Rs.)</th>
+        <th scope="col">Total Amount(Rs.)</th>
+    </tr>  
+    </thread>
+    <tbody>
+      <tr ng-repeat="x in items">
+        <td>{{x.item_name}}</td>
+        <td>{{x.quantity}}</td>  
+        <td><b>{{x.price}}</b></td> 
+        <td><b>{{x.total}}</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="col-sm-9"></div><a href="reports.php" target="_blank"><button class="btn btn-primary btn-sq-lg">
+    <i class="fa fa-file fa-2x"></i><br/>Print Reports</button></a>
+</div>  
+</div>  
+
+
+
+</div>
